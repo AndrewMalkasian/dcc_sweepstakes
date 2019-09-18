@@ -8,7 +8,7 @@ namespace sweeepstakes
 {
     interface IContestant
     {
-        void RegisterContestant(Contestant conetestant);
+        void RegisterContestant(Contestant contestant);
         void PrintContestantInfo(Contestant contestant);
     }
 }
