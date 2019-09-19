@@ -8,6 +8,7 @@ namespace sweeepstakes
 {
     class MarketingFirm
     {
+
         /// I want this to have functionality to create a sweepstakes
         /// I want to implement dependency injection so that I can utilize a sweepstakes manager.
     }

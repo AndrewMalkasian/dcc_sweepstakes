@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace sweeepstakes
 {
-    class UI
+    public static class UI
     {
-        public void GetInformation(Contestant contestant)
+        public static string GetUserInfo(string output)
+        {
+            Console.WriteLine(output);
+            return Console.ReadLine();
+        }
+        public static void GiveUserKeyID(int keyId)
+        {
+            Console.WriteLine(keyId);
+          
+        }
+        public static void GetInformation(Contestant contestant)
         {
             Console.WriteLine("Enter First Name: ");
             contestant.FirstName = Console.ReadLine();    
@@ -18,6 +28,8 @@ namespace sweeepstakes
 
             Console.WriteLine("Enter E-mail: ");
             contestant.EmailAddress = Console.ReadLine();
+
+        
 
          //call function that gives registration #
         }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace sweeepstakes
 {
-    class SweepstakesQueueManager : ISweepstakesManager
+    class SweepstakesStackManager : ISweepstakesManager
     {
-        public Sweepstakes GetSweepstakes()
+        public Sweepstakes GetSweepstakes() // create new sweepstakes
         {
             throw new NotImplementedException();
         }
 
-        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        public void InsertSweepstakes(Sweepstakes sweepstakes) //place newly creately sweepstakes
         {
             throw new NotImplementedException();
         }
