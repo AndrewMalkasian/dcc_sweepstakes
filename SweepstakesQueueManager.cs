@@ -6,16 +6,24 @@ using System.Threading.Tasks;
 
 namespace sweeepstakes
 {
-    class SweepstakesQueueManager : ISweepstakesManager
+    class SweepstakesQueueManager : ISweepstakesManager, IManagable
     {
+        Queue<Sweepstakes> manager = new Queue<Sweepstakes>();
+
+        public void GetNewSweepstakes()
+        {
+            GetSweepstakes();
+        }
+
         public Sweepstakes GetSweepstakes()
         {
-            throw new NotImplementedException();
+            return manager.Dequeue(); 
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            manager.Enqueue(sweepstakes);
+            
         }
     }
 }

@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace sweeepstakes
 {
-    class Sweepstakes
+    public class Sweepstakes : IManager
     {
         int keyId = 0;
         string name;
+      
+        
+        
         
         
         Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();

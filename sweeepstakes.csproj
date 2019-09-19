@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Contestant.cs" />
     <Compile Include="IContestant.cs" />
+    <Compile Include="IManagable.cs" />
+    <Compile Include="IManager.cs" />
     <Compile Include="ISweepstakesManager.cs" />
     <Compile Include="MarketingFirm.cs" />
     <Compile Include="Program.cs" />
