@@ -6,23 +6,27 @@ using System.Threading.Tasks;
 
 namespace sweeepstakes
 {
-    public class MarketingFirm : IManager
+    public class MarketingFirm
     {
-        ISweepstakesManager sweepstakes;
-        //constructor injection
-
-        public MarketingFirm(ISweepstakesManager sweepstakes)
+        ISweepstakesManager sweepstakesManager;
+       
+        ///constructor injection
+        public MarketingFirm(ISweepstakesManager sweepstakesManager)
         {
-            this.sweepstakes = sweepstakes;
+            this.sweepstakesManager = sweepstakesManager;
         }
 
-        public void NewSweepstakes()
+        public void CreateSweepstakes()
         {
-            sweepstakes.GetSweepstakes();
+
+            Sweepstakes sweepstakes = new Sweepstakes(UI.GetUserInfo("Enter sweepstakes name"));
+            sweepstakesManager.InsertSweepstakes(sweepstakes);
+
         }
+
         /// I want this to have functionality to create a sweepstakes
         /// I want to implement dependency injection so that I can utilize a sweepstakes manager.
         /// notes:
         /// dependent on interface + provides functionality.
     }
-}
+        }

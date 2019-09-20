@@ -45,13 +45,12 @@
   <ItemGroup>
     <Compile Include="Contestant.cs" />
     <Compile Include="IContestant.cs" />
-    <Compile Include="IManagable.cs" />
-    <Compile Include="IManager.cs" />
     <Compile Include="ISweepstakesManager.cs" />
     <Compile Include="MarketingFirm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sweepstakes.cs" />
+    <Compile Include="SweepstakesFactory.cs" />
     <Compile Include="SweepstakesQueueManager.cs" />
     <Compile Include="SweepstakesStackManager.cs" />
     <Compile Include="UI.cs" />

@@ -13,6 +13,7 @@ namespace sweeepstakes
             Console.WriteLine(output);
             return Console.ReadLine();
         }
+
         public static void GiveUserKeyID(int keyId)
         {
             Console.WriteLine(keyId);

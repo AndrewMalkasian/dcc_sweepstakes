@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace sweeepstakes
 {
-    class SweepstakesQueueManager : ISweepstakesManager, IManagable
+    class SweepstakesQueueManager : ISweepstakesManager
     {
         Queue<Sweepstakes> manager = new Queue<Sweepstakes>();
-
-        public void GetNewSweepstakes()
-        {
-            GetSweepstakes();
-        }
 
         public Sweepstakes GetSweepstakes()
         {

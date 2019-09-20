@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 
 namespace sweeepstakes
 {
-    public class Sweepstakes : IManager
+    public class Sweepstakes
     {
-        int keyId = 0;
+        int keyId;
         string name;
-      
-        
-        
-        
-        
-        Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
+
+
+        Dictionary<int, Contestant> contestants;
+
         public Sweepstakes(string name)
         {
             this.name = name;
+            keyId = 0;
+            contestants = new Dictionary<int, Contestant>();
         }
         public void RegisterContestant(Contestant contestant)
         {
-            RandomPrize();
             keyId++;
             contestant.RegistrationNum = keyId;
             UI.GetUserInfo(contestant.FirstName);
             UI.GetUserInfo(contestant.LastName);
             UI.GetUserInfo(contestant.EmailAddress);
             UI.GiveUserKeyID(keyId);
-            contestants.Add(keyId, contestant); 
+            contestants.Add(keyId, contestant);
+            RandomPrize();
 
 
         }
@@ -52,7 +52,15 @@ namespace sweeepstakes
            var random = new Random();
             List<string> sweepstakesPrizes = new List<string>() { "Stolen Dog" , "a bag of candy wrappers" , "Russian Bride", "TJMaxx giftcard", "Mayoral authority", "box of band-aids(24 pack)"};
             int index = random.Next(sweepstakesPrizes.Count);
-            Console.WriteLine($"Enter to win {sweepstakesPrizes[index]}!!!");
+            Console.WriteLine($"Your contestants will be entering to win {sweepstakesPrizes[index]}!!!");
+        }
+
+        public Contestant PickWinner()
+        {
+            var random = new Random();
+            int randomKeyId = random.Next(1, contestants.Count + 1);
+            contestants.TryGetValue(randomKeyId, out Contestant contestant);
+            return contestant;
         }
     }
 }
